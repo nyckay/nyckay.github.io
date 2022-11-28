@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Mood Tracker</title>
-  </head>
-  <body>
-    <div class="header-container">
-      <header>
-        <img src="cloud.gif" alt="cute cloud gif" />
-        <h1>MOOD</h1>
-      </header>
-    </div>
-    <div class="webCopy">
-      <div class="blurb">
-       <span> <img
-          src="blackgirlmeditate.png"
-          class="meditatepic"
-          alt="girl meditating"
-        />
-        <h2>Stay in tune with MOOD!</h2>
-	</span>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/cloud_logo.png">
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 767px)" />
+  <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
+  <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 1024px)"  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+  <title>Mood</title>
+</head>
+<body>
+  <header>
+     <h1><img src="./images/mood_title.png" alt="Mood"></h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">About</a></li>    
+      </ul>
+    </nav>
+  </header>
 
-        <h3>
-          Track your emotional progress, get mental health tips, write journal
-          entries and more!
-        </h3>
+  <main>
+    <div class="intro">
+      <h2 class="text-color-hanami-pink">Stay In Tune With MOOD!</h2>
+      <p class="text-color-jordy-blue">Track your emotional progress, get mental health tips, write journal entries and more!</p>
+
+      <a href="" class="text-color-old-lavender">Get Started</a>
+      <a href="" class="text-color-old-lavender"><img src="./images/need_help_logo.png" alt=""> Need Help Now</a>
+    </div>
+
+    <div class="right-content">
+      <p class="girl-meditate"><img src="./images/blackgirlmeditate.png" alt="meditate girl"></p>
+
+      <div class="quote-container">
+        <h3 class="text-color-jordy-blue">Quote Of The Day</h3>
+        <p class="text-color-old-lavender">Ninety-nine percent of the failures come from people who have the habit of making excuses.</p>
+        <p class="text-color-desert-sand">George Washington Carver</p>
       </div>
     </div>
-	<div class="buttons">
-    <h3 class="feeling">How are you feeling?</h3>
-      <button class="button1" type="submit">happy</button>
-      <button class="button2">sad</button>
-      <button class="button3">inspired</button>
-      <button class="button4">anxious</button>
-      <button class="button5">bored</button>
-    
-</div>
-
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+  </main>
+  
+   
+  
+</body>
 </html>
