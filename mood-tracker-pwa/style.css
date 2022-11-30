@@ -8,6 +8,7 @@ h2 {
   color: rgb(220, 142, 224);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 35px;
+  margin-right: auto;
 }
 h3 {
   padding: 10px 300px;
@@ -30,19 +31,37 @@ img {
 
 header,
 footer {
+  display: flex;
+  align-items: center;
   width: 100%;
   position: fixed;
   background: #c4fffb;
   padding: 10px 10px;
   color: rgb(220, 142, 224);
 }
+
 header {
   top: 0;
   left: 0;
 }
+.navlinks {
+  text-decoration: none;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.navlinks li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+.navlinks li a {
+  transition: all 0.3s ease 0s;
+}
+.navlinks li a:hover {
+  color: pink;
+}
 
 .buttons {
-  padding: 20px 10px 10px 150px;
+  padding: 50px 10px 10px 150px;
   margin: 100px 100px 100px 100px;
   display: inline-block;
 }
@@ -108,3 +127,13 @@ button {
 .feeling {
   padding: 100px 10px 1px 400px;
 }
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
