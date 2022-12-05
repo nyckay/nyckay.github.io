@@ -150,7 +150,7 @@ body {
   color: #79667D;
 }
 
-header, nav ul, main {
+header, nav ul, .intro-content, .journal-content, #entries-list li > div{
   display: flex;
 }
 
@@ -173,14 +173,11 @@ nav {
   width: 500px;
 }
 
-ul {
-  justify-content: space-around;
-  margin: 0;
-}
-
 nav ul{
   list-style: none;
   font-size: 2.1rem;
+  justify-content: space-around;
+  margin: 0;
 }
 
 nav a {
@@ -190,7 +187,7 @@ nav a {
 
 
 /* Main */
-main {
+.intro-content, .journal-content {
   justify-content: space-between;
 }
 
@@ -274,6 +271,60 @@ main {
   text-align: end;
   margin: 0;
 }
+
+/* Journal */
+.journal-content {
+  align-items: center;
+  margin: 10px 28px;
+}
+
+.journal-content h2 {
+  font-size: 3.8rem;
+  color: #91B8F3;
+  margin: 0;
+}
+
+.plus-button {
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem!important;
+  border: none;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 50%;
+  color: #2D3F32!important;
+  background-color: #ABF2BC!important;
+}
+
+.plus-button:hover {
+  color: #ABF2BC!important;
+  background-color: #2D3F32!important;
+}
+
+/* Entries */
+#entries {
+  font-size: 1.8rem;
+  justify-content: space-around;
+  margin: 0 22px;
+}
+
+#entries-list {
+  padding: 0;
+}
+
+#entries-list li {
+  background-color: #FFFFFF;
+  list-style: none;
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 15%) 2.4px 2.4px 3.2px;
+}
+
+#entries-list li > p:nth-child(1){
+  text-align: end;
+}
+
+
 
 
 
