@@ -25,12 +25,40 @@ template.innerHTML = `
 
 
 <main>
-  <div class="journal-content">
+  <div id="journal-content">
     <h2>Entries</h2>
     <button class="plus-button" id="toggle-form">+</button>
   </div>
 
-  <entry-list></entry-list>
+  <entry-list id="entriesComponent"></entry-list>
+
+
+  <div id="form-content">
+    <h2>How Are You Feeling Today?</h2>
+
+    <form id="entry-form">
+      <label for="title">Title</label><br>
+      <input type="text" id="title" name="title">
+      <br>
+      <br>
+      <label for="mood-selection">Choose a car:</label><br>
+      <select name="mood-selection" id="mood-selection">
+        <option value="">-Select-</option>
+        <option value="happy">Happy</option>
+        <option value="inspired">Inspired</option>
+        <option value="sad">Sad</option>
+      </select> 
+      <br>
+      <br>
+      <textarea id="mood-entry" name="mood-entry" rows="10" cols="50"></textarea>
+      <br>
+      <br>
+      <button id="cancel-button">Cancel</button>
+      <button id="submit-entry-button">Submit</button>
+      <br>
+      <br>
+    </form> 
+  </div>
 </main>
 `;
 
@@ -45,7 +73,7 @@ class FormSection extends HTMLElement {
   constructor() { 
     super();
 
-    this.showForm = false;
+    this.showForm = true;
 
     const shadow = this.attachShadow({ mode: "open" });
     shadow.appendChild(template.content.cloneNode(true));
@@ -60,7 +88,24 @@ class FormSection extends HTMLElement {
   }
 
   toggleForm() { 
-    console.log("Hello");
+    this.showForm = !this.showForm;
+
+    const entryList = this.shadowRoot.querySelector('#entriesComponent');
+    const journalContent = this.shadowRoot.querySelector('#journal-content');
+    const formContent = this.shadowRoot.querySelector('#form-content');
+
+
+    console.log(entryList)
+
+    if (this.showForm) {
+      entryList.style.display = 'block';
+      journalContent.style.display = 'block';
+      formContent.style.display = 'none'
+    } else {
+      entryList.style.display = 'none';
+      journalContent.style.display = 'none';
+      formContent.style.display = 'block'
+    }
   }
 
   /**

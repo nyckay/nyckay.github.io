@@ -50,33 +50,34 @@ class Entry extends HTMLElement {
     const img = document.createElement("img");
     const pOne = document.createElement("p");
     const pTwo = document.createElement("p");
-    const pThree = document.createElement("p");
+    const h4 = document.createElement("h4");
     const pFour = document.createElement("p");
-    const pFive = document.createElement("p");
+    const h3 = document.createElement("h3");
     const divOne = document.createElement("div");
     const divTwo = document.createElement("div");
     const divThree = document.createElement("div");
     const divFour = document.createElement("div");
+    const viewButton = document.createElement("button");
     
     
     list.appendChild(pOne);
     list.appendChild(divThree);
     divThree.appendChild(divOne);
     divThree.appendChild(divTwo);
-    divOne.appendChild(pFive);
+    divOne.appendChild(h3);
     divOne.append(pTwo);
     pTwo.appendChild(img);
-    divTwo.appendChild(pThree)
+    divTwo.appendChild(h4)
     divTwo.appendChild(pFour);
+    divTwo.appendChild(viewButton);
 
-
-    // img.setAttribute("src", `${favoriteMovies[i].movie}`);
+    img.setAttribute("src", `https://www.shutterstock.com/image-vector/smiley-vector-happy-face-260nw-644809084.jpg`);
 
     pOne.textContent = `Sunday, 20  Nov 2022, 6:40pm`;
-    pThree.textContent = `Title`;
+    h4.textContent = `Title`;
     pFour.textContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
-    pFive.textContent = `Happy`
-
+    h3.textContent = `HAPPY`
+    viewButton.textContent = 'View'
     this.list.appendChild(list);
 
   }
@@ -94,6 +95,7 @@ class Entry extends HTMLElement {
     */
   connectedCallback() {
     this.shadowRoot.querySelector('#toggle-form').addEventListener('click', (e) => this.toggleForm());
+    this.shadowRoot.querySelector('submit-entry-button').addEventListener('click', (e) => this.toggleForm());
   }
   
 }
