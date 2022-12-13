@@ -94,7 +94,7 @@ class Entry extends HTMLElement {
   attributeChangedCallback(property, oldValue, newValue) { 
     // If nothing changes, stop execution
 
-    console.log(property)
+    console.log("===>", property)
   }
 
   /**
