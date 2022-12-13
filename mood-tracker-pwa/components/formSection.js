@@ -76,6 +76,7 @@ class FormSection extends HTMLElement {
     super();
 
     this.showForm = true;
+    // eslint-disable-next-line no-unused-expressions
 
     const shadow = this.attachShadow({ mode: "open" });
     shadow.appendChild(template.content.cloneNode(true));
@@ -124,7 +125,18 @@ class FormSection extends HTMLElement {
     this.shadowRoot.querySelector('#toggle-form').addEventListener('click', (e) => this.toggleForm());
     this.shadowRoot.querySelector('#submit-entry-button').addEventListener('click', (e) => {
       e.preventDefault();
-      storeSetUp.storeEntryInfo(this.titleName.value, this.moodSelection.value, this.moodEntry.value);
+
+      // Generate a timestamp
+      this.timeStampVal= Number(new Date());
+      
+      // Convert timestamp to date representation
+      this.dateRep = new Date(this.timeStampVal).toLocaleString();
+
+      if (this.titleName.value && this.moodSelection.value && this.moodEntry.value && this.dateRep) {
+        storeSetUp.storeEntryInfo(this.titleName.value, this.moodSelection.value, this.moodEntry.value, this.dateRep);
+
+        this.toggleForm();
+      }
     });
     
   }

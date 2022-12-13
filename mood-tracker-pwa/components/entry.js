@@ -47,39 +47,7 @@ class Entry extends HTMLElement {
     this.list = this.shadowRoot.querySelector("#entries-list");
     this.favoriteContainer = this.shadowRoot.querySelector('#entries');
 
-    const list = document.createElement("li");
-    const img = document.createElement("img");
-    const pOne = document.createElement("p");
-    const pTwo = document.createElement("p");
-    const h4 = document.createElement("h4");
-    const pFour = document.createElement("p");
-    const h3 = document.createElement("h3");
-    const divOne = document.createElement("div");
-    const divTwo = document.createElement("div");
-    const divThree = document.createElement("div");
-    const divFour = document.createElement("div");
-    const viewButton = document.createElement("button");
     
-    
-    list.appendChild(pOne);
-    list.appendChild(divThree);
-    divThree.appendChild(divOne);
-    divThree.appendChild(divTwo);
-    divOne.appendChild(h3);
-    divOne.append(pTwo);
-    pTwo.appendChild(img);
-    divTwo.appendChild(h4)
-    divTwo.appendChild(pFour);
-    divTwo.appendChild(viewButton);
-
-    img.setAttribute("src", `https://www.shutterstock.com/image-vector/smiley-vector-happy-face-260nw-644809084.jpg`);
-
-    pOne.textContent = `Sunday, 20  Nov 2022, 6:40pm`;
-    h4.textContent = `Title`;
-    pFour.textContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
-    h3.textContent = `HAPPY`
-    viewButton.textContent = 'View'
-    this.list.appendChild(list);
   }
 
    // Observe entries attribute for changes
@@ -93,8 +61,49 @@ class Entry extends HTMLElement {
     */
   attributeChangedCallback(property, oldValue, newValue) { 
     // If nothing changes, stop execution
+    if (oldValue === newValue) return;
 
-    console.log("===>", property)
+    // If attribute changes, convert new value into string and assign it a string
+    const entries = JSON.parse(newValue);
+
+    // Loop into the entries array and create the entry with new tags and attach it to ul element
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < entries.length; i++) {
+      const list = document.createElement("li");
+      const img = document.createElement("img");
+      const pOne = document.createElement("p");
+      const pTwo = document.createElement("p");
+      const h4 = document.createElement("h4");
+      const pFour = document.createElement("p");
+      const h3 = document.createElement("h3");
+      const divOne = document.createElement("div");
+      const divTwo = document.createElement("div");
+      const divThree = document.createElement("div");
+      const divFour = document.createElement("div");
+      const viewButton = document.createElement("button");
+      
+      
+      list.appendChild(pOne);
+      list.appendChild(divThree);
+      divThree.appendChild(divOne);
+      divThree.appendChild(divTwo);
+      divOne.appendChild(h3);
+      divOne.append(pTwo);
+      pTwo.appendChild(img);
+      divTwo.appendChild(h4);
+      divTwo.appendChild(pFour);
+      divTwo.appendChild(viewButton);
+
+      img.setAttribute("src", `https://www.shutterstock.com/image-vector/smiley-vector-happy-face-260nw-644809084.jpg`);
+
+      pOne.textContent = `${entries[i].time}`;
+      h4.textContent = `${entries[i].title}`;
+      pFour.textContent = `${entries[i].text}`;
+      h3.textContent = `${entries[i].mood}`
+      viewButton.textContent = 'View';
+      this.list.appendChild(list);
+    }
+   
   }
 
   /**

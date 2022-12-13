@@ -96,13 +96,14 @@ export class Store {
 
   
   // Function will input information from the form into the state [used in the form after submit button]
-  storeEntryInfo(title, mood, entryText) {
+  storeEntryInfo(title, mood, entryText, time) {
     
     // All entry information will be store in an object & assigned to constant var
     const entryInfo = { 
         "title": title,
         "mood": mood,
-        "text": entryText
+        "text": entryText,
+        "time": time
     }
 
     // Assign the constant variable to 'entries' key in state
