@@ -1,4 +1,4 @@
-config.js
+./configs/config.js
 # Logs
 logs
 *.log

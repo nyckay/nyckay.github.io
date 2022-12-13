@@ -6,5 +6,5 @@
  */
 // eslint-disable-next-line no-unused-vars
 const config = {
-  URL_ADDRESS: 'https://favqs.com/api', BEARER_TOKEN: 'ce436978a40bb277a813bda3685ddbdb'
+  URL_ADDRESS: 'https://favqs.com/api', BEARER_TOKEN: ''
 };
