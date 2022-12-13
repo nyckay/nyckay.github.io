@@ -320,6 +320,7 @@ nav a {
   box-shadow: rgb(0 0 0 / 15%) 2.4px 2.4px 3.2px;
   padding: 10px 24px;
   line-height: 1;
+  margin-top: 14px;
 }
 
 #entries-list li > p:nth-child(1){
@@ -335,6 +336,7 @@ nav a {
 #entries-list li > div div:nth-child(1) h3 {
   text-align: center;
   margin: 0;
+  text-transform: uppercase;
 }
 
 #entries-list li > div div:nth-child(1) p {
