@@ -65,10 +65,10 @@ class NavBar extends HTMLElement {
      * 
     */
   connectedCallback() {
-    storeSetUp.subscribe((state) => {
-      console.log(state)
+    // storeSetUp.subscribe((state) => {
+    //   console.log(state)
 
-    });
+    // });
 
     
   }
