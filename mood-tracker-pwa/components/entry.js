@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { storeSetUp } from "../store/store";
 /* eslint-disable new-cap */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-const-assign */
@@ -79,23 +80,40 @@ class Entry extends HTMLElement {
     h3.textContent = `HAPPY`
     viewButton.textContent = 'View'
     this.list.appendChild(list);
-
   }
+
+   // Observe entries attribute for changes
+   static get observedAttributes() {
+    return ["entries"];
+   }
+
   
   /**
      * Track element's attribute update: changed, added, or removed
     */
   attributeChangedCallback(property, oldValue, newValue) { 
     // If nothing changes, stop execution
+
+    console.log(property)
   }
 
   /**
+     * Subcribe to changes in the store with the call back function 
      * Lifecyle method call everytime element is appended into the DOM
      * Triggers toggleForm function when plus button is clicked
     */
   connectedCallback() {
-    this.shadowRoot.querySelector('#toggle-form').addEventListener('click', (e) => this.toggleForm());
-    this.shadowRoot.querySelector('submit-entry-button').addEventListener('click', (e) => this.toggleForm());
+    storeSetUp.subscribe((state) => {
+      console.log(state.entries);
+
+      // Set and update the 'entries' attribute in the <entry-list></entry-list> element and the whole key-value of the state object then convert it into string
+      // This will trigger the attributeChangedCallback function, which will update the entries list, letting the same mechanism for updating the entries work both from outside the component, and from within the component on the state changes.
+      this.setAttribute("entries", JSON.stringify(state.entries));
+    });
+
+
+
+   
   }
   
 }

@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { storeSetUp } from "../store/store";
 /* eslint-disable new-cap */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-const-assign */
@@ -38,10 +39,10 @@ template.innerHTML = `
 
     <form id="entry-form">
       <label for="title">Title</label><br>
-      <input type="text" id="title" name="title">
+      <input type="text" id="titleText" name="title">
       <br>
       <br>
-      <label for="mood-selection">Choose a car:</label><br>
+      <label for="mood-selection">Mood</label><br>
       <select name="mood-selection" id="mood-selection">
         <option value="">-Select-</option>
         <option value="happy">Happy</option>
@@ -68,7 +69,8 @@ class FormSection extends HTMLElement {
      * Call super first in constructor
      * Create shadow root.
      * Append template (created elements) to shadow DOM
-     * property added to hide form by default
+     * Create showForm property to hide form section by default
+     * Aadd property for title, mood, entryText
     */
   constructor() { 
     super();
@@ -78,6 +80,9 @@ class FormSection extends HTMLElement {
     const shadow = this.attachShadow({ mode: "open" });
     shadow.appendChild(template.content.cloneNode(true));
 
+    this.titleName = this.shadowRoot.querySelector("#titleText");
+    this.moodSelection = this.shadowRoot.querySelector("#mood-selection");
+    this.moodEntry = this.shadowRoot.querySelector("#mood-entry");
   }
   
   /**
@@ -87,6 +92,10 @@ class FormSection extends HTMLElement {
     // If nothing changes, stop execution
   }
 
+
+  /**
+     * Function toggles between displaying or hiding form content and journal entry
+  */
   toggleForm() { 
     this.showForm = !this.showForm;
 
@@ -94,13 +103,10 @@ class FormSection extends HTMLElement {
     const journalContent = this.shadowRoot.querySelector('#journal-content');
     const formContent = this.shadowRoot.querySelector('#form-content');
 
-
-    console.log(entryList)
-
     if (this.showForm) {
       entryList.style.display = 'block';
       journalContent.style.display = 'block';
-      formContent.style.display = 'none'
+      formContent.style.display = 'none';
     } else {
       entryList.style.display = 'none';
       journalContent.style.display = 'none';
@@ -111,9 +117,16 @@ class FormSection extends HTMLElement {
   /**
      * Lifecyle method call everytime element is appended into the DOM
      * Triggers toggleForm function when plus button is clicked
-    */
+     * Store the entries data in the state obj when submit button is clicked
+  */
   connectedCallback() {
+  
     this.shadowRoot.querySelector('#toggle-form').addEventListener('click', (e) => this.toggleForm());
+    this.shadowRoot.querySelector('#submit-entry-button').addEventListener('click', (e) => {
+      e.preventDefault();
+      storeSetUp.storeEntryInfo(this.titleName.value, this.moodSelection.value, this.moodEntry.value);
+    });
+    
   }
   
   /**
