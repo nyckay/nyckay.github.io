@@ -80,7 +80,7 @@ class Entry extends HTMLElement {
       const divTwo = document.createElement("div");
       const divThree = document.createElement("div");
       const divFour = document.createElement("div");
-      const viewButton = document.createElement("button");
+      const viewButton = document.createElement("view-modal");
       
       
       list.appendChild(pOne);
@@ -100,7 +100,7 @@ class Entry extends HTMLElement {
       h4.textContent = `${entries[i].title}`;
       pFour.textContent = `${entries[i].text}`;
       h3.textContent = `${entries[i].mood}`
-      viewButton.textContent = 'View';
+      // viewButton.textContent = 'View';
       this.list.appendChild(list);
     }
    
