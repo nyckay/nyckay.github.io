@@ -88,19 +88,23 @@ class Entry extends HTMLElement {
       divThree.appendChild(divOne);
       divThree.appendChild(divTwo);
       divOne.appendChild(h3);
-      divOne.append(pTwo);
+      divOne.appendChild(pTwo);
       pTwo.appendChild(img);
       divTwo.appendChild(h4);
       divTwo.appendChild(pFour);
       divTwo.appendChild(viewButton);
 
+      // Set attribute to image element & view-modal component
       img.setAttribute("src", `https://www.shutterstock.com/image-vector/smiley-vector-happy-face-260nw-644809084.jpg`);
+      viewButton.setAttribute("timeStamp", `${entries[i].time}`);
+      viewButton.setAttribute("entryTitle", `${entries[i].title}`);
+      viewButton.setAttribute("entryText", `${entries[i].text}`);
+      viewButton.setAttribute("entryMood", `${entries[i].mood}`);
 
       pOne.textContent = `${entries[i].time}`;
       h4.textContent = `${entries[i].title}`;
       pFour.textContent = `${entries[i].text}`;
-      h3.textContent = `${entries[i].mood}`
-      // viewButton.textContent = 'View';
+      h3.textContent = `${entries[i].mood}`;
       this.list.appendChild(list);
     }
    
