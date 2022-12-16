@@ -26,13 +26,14 @@ template.innerHTML = `
 
 
 <!-- Open modal -->
-<button id="myBtn">View</button>
+<button id="viewBtn">View</button>
 
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
+    
     <p>Some text in the Modal..</p>
   </div>
 
@@ -55,7 +56,7 @@ class View extends HTMLElement {
     this.modal = this.shadowRoot.querySelector("#myModal");
 
     // Get the view button that opens the modal
-    this.viewBtn = this.shadowRoot.querySelector("#myBtn");
+    this.viewBtn = this.shadowRoot.querySelector("#viewBtn");
 
     // Get the <span> element that closes the modal
     this.span = this.shadowRoot.querySelector(".close");
@@ -101,7 +102,7 @@ class View extends HTMLElement {
     */
   connectedCallback() {
 
-    this.shadowRoot.querySelector('#myBtn').addEventListener('click', (e) => this.showModal(true));
+    this.shadowRoot.querySelector('#viewBtn').addEventListener('click', (e) => this.showModal(true));
 
     this.shadowRoot.querySelector('.close').addEventListener('click', (e) => this.showModal(false));
     
