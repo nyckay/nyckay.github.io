@@ -2,33 +2,26 @@ html {
   box-sizing: border-box;
   background-color: #FAF6F1;
 }
-
 *, *::before, *::after{
   box-sizing: inherit;
 }
-
 body {
   font-family: 'Dongle', sans-serif;
   max-width: 1060px;
   margin: 0 auto;
 }
-
 .text-color-hanami-pink {
   color: #F4B7E9;
 }
-
 .text-color-jordy-blue, nav a, #entries-list li > div div:nth-child(1) h3 {
   color: #91B8F3;
 }
-
 .text-color-desert-sand, nav a:hover {
   color: #F3CEAD;
 }
-
 .text-color-old-lavender, #entries-list li > div div:nth-child(2) h4 {
   color: #79667D;
 }
-
 header, nav ul, .intro-content, #journal-content, #entries-list li > div{
   display: flex;
 }
@@ -38,61 +31,50 @@ header {
   align-items: end;
   border-bottom: 2px solid #E6E6E7;
 }
-
 h1 img {
   width: 250px;
 }
-
 h1 {
   height: 60px;
   margin-bottom: 0;
 }
-
 nav {
   width: 500px;
 }
-
 nav ul{
   list-style: none;
   font-size: 2.1rem;
   justify-content: space-around;
   margin: 0;
 }
-
 nav a {
   text-decoration: none;
   font-weight: bold;
 }
 
-
 /* Main */
 .intro-content, #journal-content {
   justify-content: space-between;
 }
-
 .intro{
   margin-top: 30px;
   padding: 30px;
   width: 524px;
 }
-
 .intro h2 {
   font-size: 4.9rem;
   margin-bottom: 0;
   line-height: 0.7;
 }
-
 .intro p {
   font-size: 2.4rem;
   line-height: 0.9;
   margin-top: 46px;
   margin-bottom: 66px;
 }
-
 .intro a:first-of-type {
   background-color: #F4B7E9;
 }
-
 .intro a {
   background-color: #C4FFFB;
   border: none;
@@ -106,25 +88,20 @@ nav a {
   border-radius: 8px;
   font-weight: bold;
 }
-
 .intro a img {
   width: 33px;
   margin-bottom: -12px;
 }
-
 .girl-meditate {
   text-align: center;
 }
-
 .girl-meditate img {
   width: 272px;
 }
-
 .right-content {
   margin-top: 112px;
   margin-bottom: 30px;
 }
-
 .quote-container{
   background-color: #e8edf4cf;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
@@ -132,18 +109,15 @@ nav a {
   width: 410px;
   padding: 6px 25px;
 }
-
 .quote-container h3 {
   font-size: 3rem;
   margin: 0;
 }
-
 .quote-container p:nth-child(2){
   font-size: 1.8rem;
   margin: 0;
   line-height: 0.7;
 }
-
 .quote-container p:nth-child(3) {
   font-size: 2.2rem;
   font-weight: bold;
@@ -156,13 +130,11 @@ nav a {
   align-items: center;
   margin: 10px 28px;
 }
-
 #journal-content h2, #form-content h2{
   font-size: 3.8rem;
   color: #91B8F3;
   margin: 0;
 }
-
 .plus-button {
   width: 40px;
   height: 40px;
@@ -175,7 +147,6 @@ nav a {
   color: #2D3F32!important;
   background-color: #ABF2BC!important;
 }
-
 .plus-button:hover {
   color: #ABF2BC!important;
   background-color: #2D3F32!important;
@@ -187,11 +158,9 @@ nav a {
   justify-content: space-around;
   margin: 0 22px;
 }
-
 #entries-list {
   padding: 0;
 }
-
 #entries-list li {
   background-color: #FFFFFF;
   list-style: none;
@@ -201,45 +170,36 @@ nav a {
   line-height: 1;
   margin-top: 14px;
 }
-
 #entries-list li > p:nth-child(1){
   text-align: end;
   margin: 0;
   color: #A3A3A3;
 }
-
 #entries-list li > div div:nth-child(1) {
   width: 25%;
 }
-
 #entries-list li > div div:nth-child(1) h3 {
   text-align: center;
   margin: 0;
   text-transform: uppercase;
 }
-
 #entries-list li > div div:nth-child(1) p {
   text-align: center;
   margin: 0;
 }
-
 #entries-list li > div div:nth-child(1) img {
   width: 70px;
   height: 70px;
 }
-
 #entries-list li > div div:nth-child(2) {
   width: 75%;
 }
-
 #entries-list li > div div:nth-child(2) h4 {
   margin: 14px 0 0 0;
 } 
-
 #entries-list li > div div:nth-child(2) p {
   margin: 0;
 }
-
 #viewBtn {
   background-color: #F4B7E9;
   border: 0;
@@ -268,28 +228,47 @@ nav a {
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 24px;
   /* border: 1px solid #888888; */
   width: 80%;
   border-radius: 20px;
 }
-
+.time-stamp{
+  color: #A3A3A3;
+  text-align: right;
+  margin: 2.5rem 2rem 0 0;
+  font-size: 2.1rem;
+}
 .modal-content > div {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+}
+.moodTitle {
+  width: 20%
+} 
+.entryText{
+  width: 70%;
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #CB0101;
   float: right;
-  font-size: 28px;
   font-weight: bold;
+  width: 26px;
+  height: 26px;
+  font-size: 1.2rem!important;
+  border: none;
+  /* display: inline-block; */
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 50%; 
+  background-color: #ff000082!important;
 }
-
-.close:hover,
-.close:focus {
-  color: #000;
+.close:hover {
+  color: #ffadad;
+  background-color: #9d1313!important;
   text-decoration: none;
   cursor: pointer;
 }
@@ -301,18 +280,15 @@ nav a {
   font-size: 2.4rem;
   color: #00000091;
 }
-
 #form-content {
   display: none;
 }
-
 #form-content h2 {
   text-align: center;
   line-height: 1;
   margin-top: 90px;
   margin-bottom: 34px;
 }
-
 #titleText, #mood-selection {
   outline: none;
   font-size: 1rem;
@@ -324,7 +300,6 @@ nav a {
   border: 1px #FFFFFF solid;
   border-radius: 15px;
 }
-
 #mood-selection {
   width: 150px;
   appearance: none;
@@ -332,7 +307,6 @@ nav a {
   -moz-appearance: none;
   -ms-appearance: none;
 }
-
 #mood-entry {
   outline: none;
   font-size: 1rem;
@@ -340,7 +314,6 @@ nav a {
   border: 1px #FFFFFF solid;
   border-radius: 15px;
 }
-
 #cancel-button, #submit-entry-button {
   width: 6rem;
   height: 3rem;
@@ -354,7 +327,6 @@ nav a {
   border-radius: 15px;
   cursor: pointer;
 }
-
 #cancel-button {
   background-color: #E6E6E7;
   color: #2D3F32;
@@ -366,7 +338,6 @@ nav a {
   font-size: 4.5rem;    
   margin: 33px 20px 38px 50px;
 }
-
 #about-content {
   width: 410px;
   line-height: 1;
@@ -376,17 +347,14 @@ nav a {
   margin-left: 100px;
   margin-top: 0;
 }
-
 #about-page h2:nth-last-child(2) {
   text-align: center;
 }
-
 #team-members {
   display: flex;
   justify-content: space-around;
   margin: 0 140px;
 }
-
 #team-members img {
   width: 110px;
   height: 110px;

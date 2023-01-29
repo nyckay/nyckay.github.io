@@ -32,7 +32,7 @@ template.innerHTML = `
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span> 
+    <button class="close">&times;</button> 
     <p class="time-stamp"></p> 
     <div>
       <div class="moodTitle"></div>
@@ -60,8 +60,8 @@ class View extends HTMLElement {
     // Get the view button that opens the modal
     this.viewBtn = this.shadowRoot.querySelector("#viewBtn");
 
-    // Get the <span> element that closes the modal
-    this.span = this.shadowRoot.querySelector(".close");
+    // Get the <button> element that closes the modal
+    this.button = this.shadowRoot.querySelector(".close");
     
     // Get <div> element with the class moodTitle & entryText
     this.moodTitle = this.shadowRoot.querySelector(".moodTitle")
