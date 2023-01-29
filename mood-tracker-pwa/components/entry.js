@@ -27,7 +27,6 @@ template.innerHTML = `
 <div id='entries'>
   <ul id='entries-list'></ul>
 </div>
-
 `;
 
 /** Class representing Entry. */
@@ -36,7 +35,7 @@ class Entry extends HTMLElement {
      * Call super first in constructor
      * Create shadow root.
      * Append template (created elements) to shadow DOM
-     * property added to hide form by default
+     * Property added to hide form by default
     */
   constructor() { 
     super();
@@ -46,8 +45,6 @@ class Entry extends HTMLElement {
 
     this.list = this.shadowRoot.querySelector("#entries-list");
     this.favoriteContainer = this.shadowRoot.querySelector('#entries');
-
-    
   }
 
    // Observe entries attribute for changes
@@ -95,6 +92,8 @@ class Entry extends HTMLElement {
       divTwo.appendChild(viewButton);
 
       // Set attribute to image element & view-modal component
+      // Value coming from entry added to the p, h4, p4 and h3 elements
+      // Append each list info to the ul element with id of 'entries-list'
       img.setAttribute("src", `https://www.shutterstock.com/image-vector/smiley-vector-happy-face-260nw-644809084.jpg`);
       viewButton.setAttribute("timeStamp", `${entries[i].time}`);
       viewButton.setAttribute("entryTitle", `${entries[i].title}`);

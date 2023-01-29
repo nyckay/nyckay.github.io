@@ -269,8 +269,14 @@ nav a {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888888;
+  /* border: 1px solid #888888; */
   width: 80%;
+  border-radius: 20px;
+}
+
+.modal-content > div {
+  display: flex;
+  align-items: center;
 }
 
 /* The Close Button */
