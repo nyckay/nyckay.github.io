@@ -49,18 +49,15 @@ export class Store {
       this.state = new Proxy(init, {
 
         async set(state, key, value) {
-          
           // Make the update to property in the state object
           // eslint-disable-next-line no-param-reassign
           state[key] = value;
-  
-          
   
           // whenever the store gets updated, save the changes to the indexedb. This helps for later recovery of data
           //  check to see if database is open
           if (self.db) {
             // grab the quoteEntry database add or put in the state inside the database and assign the key name of 'entries'. ex: entries: "value" 
-            await self.db.put('quoteEntry', state, 'entries')
+            await self.db.put('quoteEntry', state, 'entries');
           }
   
           // subscribers will react to state being updated by looping each subscriber and call each subscriber function with an updated state. This will subscribe new updated state to the Store
@@ -116,18 +113,13 @@ export class Store {
 
 
 
-  // Function will add new entry to an array and set it in the state
-  //  postEntry(entry) {
-  //    this.set('entries', []);
-
-  //    this.set('entries', entry);
-  //   }
-
-
-
+  // Function will store data from API to do the database
+   postQuoteOfDay(dataQuoteOfDay) {
+     this.set('quoteOfDay', dataQuoteOfDay);
+    }
 
 
 }
 
-export const storeSetUp = new Store({ entries: [] });
+export const storeSetUp = new Store({ entries: [], quoteOfDay: {} });
 
