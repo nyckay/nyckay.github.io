@@ -17,3 +17,6 @@ window.addEventListener('load', (e) => {
   e.preventDefault();
   getQuoteOfDay(URL_ADDRESS, BEARER_TOKEN);
 });
+
+
+

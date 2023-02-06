@@ -63,7 +63,11 @@ class Entry extends HTMLElement {
     // If attribute changes, convert new value into string and assign it a string
     const entries = JSON.parse(newValue);
 
+    // Clear the list before appending new set of entries to the ul element
     // Loop into the entries array and create the entry with new tags and attach it to ul element
+    // eslint-disable-next-line no-plusplus
+    this.list.innerHTML = '';
+
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < entries.length; i++) {
       const list = document.createElement("li");
@@ -116,8 +120,6 @@ class Entry extends HTMLElement {
     */
   connectedCallback() {
     storeSetUp.subscribe((state) => {
-      console.log(state.entries);
-
       // Set and update the 'entries' attribute in the <entry-list></entry-list> element and the whole key-value of the state object then convert it into string
       // This will trigger the attributeChangedCallback function, which will update the entries list, letting the same mechanism for updating the entries work both from outside the component, and from within the component on the state changes.
       this.setAttribute("entries", JSON.stringify(state.entries));

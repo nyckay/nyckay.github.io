@@ -7,8 +7,8 @@ import { openDB } from "idb";
 // Create two tables in database  quoteOfDay & quoteEntry
 export const database = openDB('quoteEntry', 1, {
   upgrade(db) {
-    db.createObjectStore('quoteOfDay');
+    // db.createObjectStore('quoteOfDay');
     db.createObjectStore('quoteEntry');
-    db.createObjectStore('quoteByTag');
+    // db.createObjectStore('quoteByTag');
   },
 });
