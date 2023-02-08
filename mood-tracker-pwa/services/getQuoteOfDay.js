@@ -29,8 +29,7 @@ export async function getQuoteOfDay(url, bearerToken) {
       const subtractQuoteDate = new Date(quoteDate);
       const subtrOneDay = subtractQuoteDate.setDate(subtractQuoteDate.getDate() - 1);
       const quoteDateFormat = new Date(subtrOneDay).toISOString().split("T")[0];
-      
-      
+     
       if (cuurentDate !== quoteDateFormat) {
         storeSetUp.postQuoteOfDay(res.data);
       }

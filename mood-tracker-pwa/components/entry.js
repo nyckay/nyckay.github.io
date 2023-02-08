@@ -44,14 +44,13 @@ class Entry extends HTMLElement {
     shadow.appendChild(template.content.cloneNode(true));
 
     this.list = this.shadowRoot.querySelector("#entries-list");
-    this.favoriteContainer = this.shadowRoot.querySelector('#entries');
+    // this.favoriteContainer = this.shadowRoot.querySelector('#entries');
   }
 
    // Observe entries attribute for changes
    static get observedAttributes() {
     return ["entries"];
-   }
-
+  }
   
   /**
      * Track element's attribute update: changed, added, or removed
